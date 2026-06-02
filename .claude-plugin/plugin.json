@@ -1,0 +1,16 @@
+{
+  "name": "tsunu-superpowers",
+  "description": "通用的 Claude Code 流程紀律框架：涵蓋程式開發、內容製作、研究、日常協作等多種任務類型的中文版超能力",
+  "version": "0.1.0",
+  "author": {
+    "name": "楊竣宇（阿宇）"
+  },
+  "license": "MIT",
+  "keywords": [
+    "流程紀律",
+    "任務分流",
+    "switchboard",
+    "協作",
+    "中文"
+  ]
+}
