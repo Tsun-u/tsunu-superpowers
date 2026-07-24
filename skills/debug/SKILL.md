@@ -1,5 +1,5 @@
 ---
-name: 系統排查
+name: debug
 description: 遇到任何非預期狀況時，系統化地找出根本原因再修。不只是程式 bug——影片 pipeline 卡住、算圖結果不對、部署失敗都適用。嚴格型 skill。
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: 交付收尾
+name: deliver
 description: 任務完成後的收尾流程。程式開發有 merge/PR 選項，影片有上傳/review 流程，通用任務有交付確認。確保東西真的做完了、該通知的人知道了、該清理的清了。
 ---
 
@@ -97,16 +97,16 @@ npm test / cargo test / pytest / go test ./...
 - 附上產出物的位置或連結
 - 說明任何注意事項
 
-### switchboard 委派的任務
+### 由其他 session 委派的任務
 
 **第一步：正常收尾流程**
 
 **第二步：回報委派者**
-- 用 switchboard send 回報結果摘要
+- 使用原委派通道回報結果摘要
 - 更新委派訊息指定的紀錄
 
 **第三步：更新值班表**
-- 如果任務完成改變了自己的狀態，更新 SWITCHBOARD_STATUS.md
+- 只有委派契約指定共享狀態檔，而且檔案確實存在時才更新
 
 ## 通知
 
@@ -115,8 +115,8 @@ npm test / cargo test / pytest / go test ./...
 | 對象 | 時機 | 方式 |
 |------|------|------|
 | 使用者 | 重要任務完成 | 當前對話直接說 |
-| 委派者 | switchboard 委派完成 | switchboard send |
-| 其他agent | 影響到他們的變更 | switchboard broadcast |
+| 委派者 | 跨 session 委派完成 | 原委派通道 |
+| 其他 agent | 影響到他們的變更 | 已驗證且獲授權的協作通道 |
 
 ## 清理
 

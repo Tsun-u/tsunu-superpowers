@@ -1,11 +1,12 @@
 # tsunu-superpowers
 
-通用的 Claude Code 流程紀律框架。涵蓋程式開發、內容製作、研究、日常協作等多種任務類型。
+通用的 Codex 與 Claude Code 流程紀律框架。涵蓋程式開發、內容製作、研究、日常協作等多種任務類型。
 
 ## 開發原則
 
 - 全正體中文，使用台灣技術術語
-- skill 名稱使用中文，但交叉引用其他 skill 時必須附上英文 slug（例：思考整理（`brainstorm`）），確保觸發名稱明確
+- skill 目錄與 frontmatter 名稱使用英文 slug；正文以中文名稱搭配 slug 交叉引用（例：思考整理（`brainstorm`））
+- 共用 skill 不寫死宿主工具名稱；Codex 與 Claude Code 的差異以能力偵測處理
 - 組合式架構：框架管流程，特化 skill 是可獨立觸發的模組
 - 框架是安全網，不是官僚——任務明確時不強制走完整流程
 

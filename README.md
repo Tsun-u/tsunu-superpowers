@@ -1,6 +1,6 @@
 # tsunu-superpowers
 
-通用的 Claude Code 流程紀律框架。涵蓋程式開發、內容製作、研究、日常協作等多種任務類型。
+通用的 Codex 與 Claude Code 流程紀律框架。涵蓋程式開發、內容製作、研究、日常協作等多種任務類型。
 
 Fork 自 [superpowers](https://github.com/obra/superpowers) v5.1.0 的設計精神，完全獨立實作，不依賴原版。
 
@@ -10,7 +10,7 @@ Fork 自 [superpowers](https://github.com/obra/superpowers) v5.1.0 的設計精�
 - **任務分流**：根據任務性質（嚴謹/混合/創意）決定流程強度，不一刀切
 - **框架是安全網，不是官僚**：已有特化 skill 且任務明確時，不強制走完整流程
 - **全正體中文**：skill 內容、產出文件全部使用正體中文和台灣技術術語
-- **switchboard 原生**：多 session 協作是框架的一等公民
+- **能力導向協作**：優先使用宿主原生子代理；環境有 Switchboard 等通道時才啟用跨 session 協作
 
 ## 任務性質三分法
 
@@ -35,7 +35,7 @@ Fork 自 [superpowers](https://github.com/obra/superpowers) v5.1.0 的設計精�
 |------|------|------|
 | `brainstorm` | 思考整理 | 需求探索和設計 |
 | `plan` | 擬定計畫 | 設計 → 實作計畫 |
-| `execute` | 執行計畫 | 四種模式：本 session / 子代理 / switchboard / 混合並行 |
+| `execute` | 執行計畫 | 四種模式：本 session / 子代理 / 跨 session / 混合並行 |
 | `acceptance` | 驗收標準 | 先定義「怎樣算做好」再動手 |
 | `verify` | 完成驗證 | 宣稱完成前必須跑驗證 |
 | `debug` | 系統排查 | 系統化問題排除 |
@@ -44,7 +44,7 @@ Fork 自 [superpowers](https://github.com/obra/superpowers) v5.1.0 的設計精�
 
 | Slug | 名稱 | 職責 |
 |------|------|------|
-| `collaborate` | 夥伴協作 | switchboard 基礎規範 |
+| `collaborate` | 夥伴協作 | 原生子代理與選用的跨 session 協作規範 |
 | `review` | 同儕審查 | 任何產出的審查流程 |
 
 ### 收尾與工具
@@ -57,7 +57,20 @@ Fork 自 [superpowers](https://github.com/obra/superpowers) v5.1.0 的設計精�
 
 ## 安裝
 
-本 plugin 透過 local marketplace 安裝：
+### Codex
+
+本 repo 已包含 `.codex-plugin/plugin.json`。將 repo 放入 Codex marketplace 的 `plugins/tsunu-superpowers` 後，即可從該 marketplace 安裝：
+
+```bash
+codex plugin marketplace add /path/to/marketplace
+codex plugin add tsunu-superpowers@<marketplace-name>
+```
+
+Codex 不載入 `hooks/` 內的 Claude SessionStart hook；skill 會依 Codex 的 plugin 與 skill 機制觸發。
+
+### Claude Code
+
+透過 local marketplace 安裝：
 
 ```bash
 # 確認 local-plugins marketplace 已註冊

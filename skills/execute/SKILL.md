@@ -1,6 +1,6 @@
 ---
-name: 執行計畫
-description: 有了實作計畫後，按步驟執行。支援四種模式：本 session 逐步執行、派子代理、switchboard 委派其他 session、混合並行。
+name: execute
+description: 有了實作計畫後按步驟執行，依宿主能力選擇本 session、原生子代理、可用的跨 session 通道或混合並行模式。
 ---
 
 # 執行計畫
@@ -77,16 +77,16 @@ description: 有了實作計畫後，按步驟執行。支援四種模式：本 
 回報：完成了什麼、驗證結果、遇到什麼問題。
 ```
 
-### 模式三：switchboard 委派
+### 模式三：跨 session 通道委派
 
-透過 switchboard 將任務委派給其他線上的 agent session。
+只在環境已提供 Switchboard、wake-cc 或其他明確的跨 session 通道時，才把任務委派給其他線上的 agent session。沒有這類能力時，回到本 session 或原生子代理模式，不得虛構目標 session。
 
 **適用於**：
 - 任務需要其他 session 正在使用的資源（Chrome MCP、GCE 等）
 - 已有專責 session 在處理相關主題
 - 任務需要不同的專長或視角
 
-**前提**：目標 session 在線上且不忙（先查 SWITCHBOARD_STATUS.md）。
+**前提**：能以現有工具查證目標 session 存在且可接收訊息。`SWITCHBOARD_STATUS.md` 只有在 repository 實際存在且被指定為狀態來源時才使用。
 
 **流程**：
 ```
@@ -152,8 +152,8 @@ description: 有了實作計畫後，按步驟執行。支援四種模式：本 
 ```
 
 **並行時的注意事項**：
-- 子代理用同一個 Agent tool 呼叫中發出多個，才會真正並行
-- switchboard 委派前確認目標 session 在線且不忙
+- 依宿主目前提供的協作工具並行呼叫規則操作，不假設工具名稱或批次格式
+- 跨 session 委派前確認目標 session 在線且不忙
 - 同時不要委派太多給同一個 session
 - 追蹤哪些已回覆、哪些還在等
 

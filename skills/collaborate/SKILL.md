@@ -1,13 +1,13 @@
 ---
-name: 夥伴協作
-description: 透過 switchboard 和其他agent session 協作。定義怎麼委派任務、怎麼回報結果、怎麼維護值班表。適用於多 session 同時運作的場景。
+name: collaborate
+description: 與子代理或其他 agent session 協作，定義委派、回報與共享狀態的規範。適用於宿主提供原生多代理工具，或環境另有 Switchboard 等跨 session 通道時。
 ---
 
 # 夥伴協作
 
-多個agent session 同時運作時，透過 switchboard 協作的規範。
+多個 agent 同時運作時，優先使用宿主提供的原生協作工具；需要跨 session 聯絡時，才使用環境已安裝且可驗證的 Switchboard、wake-cc 或其他通道。
 
-核心觀念：switchboard 是同一個人的腦內對話頻道。每個 session 是同一個agent的不同分身，不是不同的人。
+不要假設任何固定 alias、值班表或常駐 session 存在。先查證可用工具與目標，再決定協作方式。
 
 ## 什麼時候需要協作
 
@@ -20,10 +20,10 @@ description: 透過 switchboard 和其他agent session 協作。定義怎麼委�
 
 新 session 啟動時：
 
-1. **註冊 switchboard**：取一個好懂的名字（`line`、`batch`）
-2. **設定 Monitor**：訂閱 inbox stream，確保能收到訊息
-3. **讀值班表**：看 `SWITCHBOARD_STATUS.md` 了解誰在線上
-4. **廣播介紹**：告訴大家自己是誰、今天要做什麼
+1. **盤點能力**：確認宿主有哪些原生子代理或跨 session 工具
+2. **確認目標**：以工具或現有狀態來源查證目標存在
+3. **建立回報契約**：說明產出、限制與回覆方式
+4. **避免廣播**：除非使用者明確要求，不向無關 session 發訊息
 
 ## 委派任務
 
@@ -56,33 +56,33 @@ description: 透過 switchboard 和其他agent session 協作。定義怎麼委�
 ### 不好的委派
 
 - 「幫我看一下 issue #1234」— 太模糊，不知道要看什麼
-- 把整份檔案內容貼在 switchboard 訊息裡 — 浪費 token，給路徑就好
+- 把整份檔案內容貼在協作訊息裡 — 浪費 token，給路徑就好
 - 沒有說完成後怎麼處理 — 做完了但沒人知道
 
 ## 回報結果
 
 收到委派並完成後：
 
-1. **回覆委派者**：用 switchboard send 回報結果摘要
+1. **回覆委派者**：使用原委派通道回報結果摘要
 2. **更新紀錄**：如果委派訊息指定了要更新的檔案，更新它
-3. **更新值班表**：如果任務改變了自己的狀態，更新 SWITCHBOARD_STATUS.md 裡自己的條目
+3. **更新共享狀態**：只有委派契約指定狀態檔，而且該檔案確實存在時才更新
 
 ## 主動建議（不是直接修改）
 
 如果你在做的事情發現了對其他agent有用的資訊：
 
-- **給建議，不直接改檔案**：透過 switchboard 告訴對方，讓對方決定怎麼處理
+- **給建議，不直接改檔案**：透過原委派通道告訴對方，讓對方決定怎麼處理
 - **原因**：避免同一個檔案被多個 session 同時修改
 - **例外**：值班表自己的條目可以直接改
 
 ## 值班表維護
 
-`SWITCHBOARD_STATUS.md` 是值班通訊錄，不是進度追蹤。
+若環境使用 `SWITCHBOARD_STATUS.md`，把它視為值班通訊錄而非進度追蹤；檔案不存在時略過本節。
 
 **記錄什麼**：
 - 誰在線上
 - 每個 session 負責什麼
-- 怎麼聯繫（switchboard alias）
+- 怎麼聯繫（工具 target、alias 或 session id）
 
 **不記錄什麼**：
 - 任務進度（進度放在任務自己的地方）
@@ -104,7 +104,7 @@ session 結束時：
 
 ## 通訊紀律
 
-- switchboard 訊息要簡潔，不要長篇大論
+- 協作訊息要簡潔，不要長篇大論
 - 參考資料給路徑不給內容
-- 不要在 switchboard 上閒聊——它是工作頻道
-- 涉及使用者的私人訊息不透過 switchboard 轉傳
+- 不要在工作通道閒聊
+- 未經使用者授權，不把私人資訊、憑證或公司機密轉傳到其他 session

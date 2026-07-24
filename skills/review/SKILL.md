@@ -1,5 +1,5 @@
 ---
-name: 同儕審查
+name: review
 description: 請求或接收任何產出的審查。不只是程式碼——腳本、設計、圖片、文件都適用。包含「請別人審查」和「被審查時如何回應」兩個面向。
 ---
 
@@ -67,7 +67,7 @@ description: 請求或接收任何產出的審查。不只是程式碼——腳�
 ### 誰來審查
 
 - **子代理**：在 session 內派一個審查用子代理（最快，但視角相同）
-- **其他 agent session**：透過 switchboard 委派（適合需要不同 context 的情況）
+- **其他 agent session**：只在環境有已驗證的跨 session 通道時委派（適合需要不同 context 的情況）
 - **Codex（codex-bridge）**：透過 `mcp__codex-bridge__codex_ask` 直連Codex審查（不同模型的視角、低延遲、私密 1:1；技術審查特別適合）
 - **使用者**：重要決策或不確定的地方
 

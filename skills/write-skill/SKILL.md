@@ -1,5 +1,5 @@
 ---
-name: 撰寫技能
+name: write-skill
 description: 元技能：撰寫、修改、測試新的 skill。確保 skill 格式正確、觸發條件明確、內容能有效引導行為。
 ---
 

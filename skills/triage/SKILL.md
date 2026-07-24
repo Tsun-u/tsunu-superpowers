@@ -1,5 +1,5 @@
 ---
-name: 任務分流
+name: triage
 description: 判斷任務性質（嚴謹/混合/創意），決定流程強度。超能力入口觸發後自動進入此 skill。
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: 驗收標準
+name: acceptance
 description: 動手之前，先定義「怎樣算做好」。適用於所有嚴謹和混合任務。不只是程式的測試——教學影片有 pattern checklist，算圖有評圖標準，每種任務都有自己的「做好」定義。嚴格型 skill。
 ---
 

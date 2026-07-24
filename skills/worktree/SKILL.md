@@ -1,6 +1,6 @@
 ---
-name: 隔離工作區
-description: 開始程式開發任務前，確保有隔離的工作環境。使用 git worktree 或 Agent tool 的 isolation 參數，避免影響主分支和其他 session 的工作。程式開發專用。
+name: worktree
+description: 開始程式開發任務前評估是否需要隔離工作環境；使用 git worktree 或宿主提供的隔離能力，避免影響主分支與其他 session。程式開發專用。
 ---
 
 # 隔離工作區
@@ -44,19 +44,11 @@ git worktree prune
 - 合併前確認測試通過
 - 不要刪除還在被 PR 使用的 worktree
 
-### Agent Tool 的 isolation 參數
+### 宿主的子代理隔離能力
 
-派子代理時指定 `isolation: "worktree"`，系統自動建立隔離環境。
+若宿主的子代理工具明確支援 worktree 或 isolation 參數，可使用該能力自動建立隔離環境。不要假設所有宿主都有相同參數；先以當前工具 schema 為準。
 
-```
-Agent({
-  description: "實作功能 X",
-  prompt: "...",
-  isolation: "worktree"
-})
-```
-
-子代理完成後，系統會回報 worktree 路徑和分支名稱。如果子代理沒有做任何變更，worktree 會自動清理。
+子代理完成後，確認宿主回報的 worktree 路徑、分支名稱與清理狀態。宿主沒有承諾自動清理時，不得假設 worktree 已被移除。
 
 ## 分支命名
 

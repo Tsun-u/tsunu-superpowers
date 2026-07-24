@@ -1,0 +1,28 @@
+{
+  "name": "tsunu-superpowers",
+  "version": "0.2.0",
+  "description": "通用的正體中文流程紀律框架，支援任務分流、規劃、執行、驗證、審查與交付。",
+  "author": {
+    "name": "楊竣宇（阿宇）",
+    "url": "https://github.com/Tsun-u"
+  },
+  "homepage": "https://github.com/Tsun-u/tsunu-superpowers",
+  "repository": "https://github.com/Tsun-u/tsunu-superpowers",
+  "license": "MIT",
+  "keywords": ["workflow", "skills", "traditional-chinese", "collaboration"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Tsunu Superpowers",
+    "shortDescription": "正體中文任務流程與品質紀律",
+    "longDescription": "依任務性質調整流程強度，串接思考、計畫、執行、驗證、審查與交付，適用於 Codex 與 Claude Code。",
+    "developerName": "楊竣宇（阿宇）",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Write"],
+    "websiteURL": "https://github.com/Tsun-u/tsunu-superpowers",
+    "defaultPrompt": [
+      "幫我釐清需求並規劃這個任務。",
+      "依計畫執行，完成後驗證與審查。",
+      "系統化排查這個問題的根因。"
+    ]
+  }
+}
