@@ -59,11 +59,11 @@ Fork 自 [superpowers](https://github.com/obra/superpowers) v5.1.0 的設計精�
 
 ### Codex
 
-本 repo 已包含 `.codex-plugin/plugin.json`。將 repo 放入 Codex marketplace 的 `plugins/tsunu-superpowers` 後，即可從該 marketplace 安裝：
+本 repo 同時是可直接加入的 Codex Git marketplace：
 
 ```bash
-codex plugin marketplace add /path/to/marketplace
-codex plugin add tsunu-superpowers@<marketplace-name>
+codex plugin marketplace add Tsun-u/tsunu-superpowers --ref main
+codex plugin add tsunu-superpowers@tsunu
 ```
 
 Codex 不載入 `hooks/` 內的 Claude SessionStart hook；skill 會依 Codex 的 plugin 與 skill 機制觸發。

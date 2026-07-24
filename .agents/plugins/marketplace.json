@@ -1,0 +1,20 @@
+{
+  "name": "tsunu",
+  "interface": {
+    "displayName": "Tsunu Plugins"
+  },
+  "plugins": [
+    {
+      "name": "tsunu-superpowers",
+      "source": {
+        "source": "local",
+        "path": "../../.."
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
