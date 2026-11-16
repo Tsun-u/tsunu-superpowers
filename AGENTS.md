@@ -18,7 +18,7 @@
 .codex-plugin/  — Codex plugin manifest
 .claude-plugin/ — Claude Code plugin manifest
 hooks/          — Claude Code session hook
-skills/         — 兩個平台共用的 13 個 skill
+skills/         — 兩個平台共用的 12 個 skill
 ```
 
 修改後至少執行 Codex plugin validator 與所有 skill 的 quick validator；Claude 端的 manifest 與 hook 行為也不得被破壞。

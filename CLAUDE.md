@@ -17,9 +17,8 @@ skills/
 ├── entry/        — 超能力入口：入口路由
 ├── triage/       — 任務分流：判斷任務性質
 ├── brainstorm/   — 思考整理：brainstorming
-├── plan/         — 擬定計畫：writing plans
+├── plan/         — 擬定計畫：先定義怎樣算做好（驗收標準），再寫計畫
 ├── execute/      — 執行計畫：含子代理/switchboard/並行模式
-├── acceptance/   — 驗收標準：先定義怎樣算做好
 ├── verify/       — 完成驗證：宣稱前必須驗證
 ├── debug/        — 系統排查：系統化問題排除
 ├── collaborate/  — 夥伴協作：switchboard 基礎規範

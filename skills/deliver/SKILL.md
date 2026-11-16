@@ -136,11 +136,11 @@ npm test / cargo test / pytest / go test ./...
 - **Monitor / Cron**：任務完成後停掉不再需要的監控
 - **虛擬桌面**：GUI 操作完成後關閉隔離桌面
 
-## 紅旗
+## 收尾前確認
 
-- 沒驗證就宣稱交付
-- 忘記通知委派者
-- 沒確認就刪除工作成果
-- force push 沒問使用者
-- 影片沒過三層 review 就上 YouTube
-- 工作做完了，backlog 還掛著那一項
+- 宣稱交付前跑過完成驗證（`verify`）
+- 委派者收到回報了
+- 刪除工作成果前有使用者的確認
+- force push 前問過使用者
+- 影片過了三層 review 才上 YouTube
+- backlog 裡做完的項目已經刪掉或打勾

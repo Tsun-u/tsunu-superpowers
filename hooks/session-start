@@ -20,7 +20,7 @@ escape_for_json() {
 }
 
 entry_escaped=$(escape_for_json "$entry_content")
-session_context="<EXTREMELY_IMPORTANT>\ntsunu-superpowers 已啟動。\n\n**以下是 'tsunu-superpowers:entry' skill 的完整內容——你的 skill 使用指南。其他 skill 請用 Skill tool 觸發：**\n\n${entry_escaped}\n</EXTREMELY_IMPORTANT>"
+session_context="以下是 'tsunu-superpowers:entry' skill 的完整內容，說明什麼時候該先載入 skill。其他 skill 依宿主的 skill 機制載入。\n\n${entry_escaped}"
 
 if [ -n "${CURSOR_PLUGIN_ROOT:-}" ]; then
   printf '{\n  "additional_context": "%s"\n}\n' "$session_context"
